@@ -19,17 +19,17 @@
 function makeWordFreqMap(str, stopwords) {
   str = str.trim().toLowerCase(); // lower case so that "Land" and "land" are not counted separately
   // remove punctuation so that "world." and "world" are not saved as separate keys
-  // str = str.replace(",", "");
-  // str = str.replace(".", "");
-  // str = str.replace(";", "");
-  // str = str.replace(":", "");
-  // str = str.replace("?", "");
-  // str = str.replace("!", "");
-  // or use fancy RegEx move to strip all non-alphanumeric characters
-  str = str
-    .replace(/[^\w\s]|_/g, "")
-    .replace(/\s+/g, " ")
-    .replace(/[0-9]/g, "");
+  str = str.replaceAll(",", "");
+  str = str.replaceAll(".", "");
+  str = str.replaceAll(";", "");
+  str = str.replaceAll(":", "");
+  str = str.replaceAll("?", "");
+  str = str.replaceAll("!", "");
+  // or use fancy RegEx move to strip all non-alphanumeric characters:
+  // str = str
+  //   .replace(/[^\w\s]|_/g, "")
+  //   .replace(/\s+/g, " ")
+  //   .replace(/[0-9]/g, "");
   // RegEx gibberish decoded:
   // \w is any digit, letter, or underscore.
   // \s is any whitespace.
@@ -37,20 +37,25 @@ function makeWordFreqMap(str, stopwords) {
   // [^\w\s]|_ is the same as #3 except with the underscores added back in.
   // [0-9] is all digits
   // /g is globally replace (everywhere)
-  // str = str.trim(); // get rid of any extra whitespace that still may remain
-  let arr = str.split(" "); // make an array of the words, each word an array item
-  let obj = {}; // declare a new object
-  for (let i = 0; i < arr.length; i++) {
-    let word = arr[i];
-    if (!stopwords.includes(word)) {
-      // if the current word is NOT one of the stopwords // if the current word is not already an object key, make it a key w an initial value of 1, else increment the value of the word key by 1
-      !obj[word] ? (obj[word] = 1) : obj[word]++;
+
+  let words = str.split(" "); // make an array of the words, each word an array item
+  let wordCloud = {}; // declare a new object
+  for (let i = 0; i < words.length; i++) {
+    let word = words[i];
+    // if the current word is NOT one of the stopwords
+    if (stopwords.includes(word) === false) {
+      // if the current word is already an object key, increment the value of the word key by 1, else make it a key with an initial value of 1
+      if (wordCloud[word]) {
+        wordCloud[word]++;
+      } else {
+        wordCloud[word] = 1;
+      }
     } // end if-else
   } // end for loop
-  return obj; // output the function
-} // end function
 
-let fairyTaleWordFreq = makeWordFreqMap(textPassage, stopwords);
+  return wordCloud;
+
+let fairyTaleWordFreq = makeWordFreqMap(fairyTalesText, stopwords);
 console.log("fairyTaleWordFreq:", fairyTaleWordFreq);
 
 let treehouseWordFreq = makeWordFreqMap(treehouse, stopwords);
