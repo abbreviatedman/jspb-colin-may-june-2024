@@ -1,24 +1,24 @@
 // Lesson 05.06
 // Classic Programming Job Interview Challenges:
-// A. Fizz-Buzz
+// A. FizzBuzz
 // B. Find nth Fibonacci Number
 // C. Check for duplicates in array
 
-// A. Fizz-Buzz
+// A. FizzBuzz
 
 // Output to the console all integers from 1-100 along with "Fizz" and/or "Buzz" according to the following rules:
 /*
-- If the number is evenly divisible by both 3 and 5, output the number followed by ' Fizz-Buzz'.
+- If the number is evenly divisible by both 3 and 5, output the number followed by ' FizzBuzz'.
 - If the number is evenly divisible by 3 (but not 5), output the number followed by ' Fizz'.
 - If the number is evenly divisible by 5 (but not 3), output the number followed by ' Buzz'.
 - If the number is divisible by neither 3 nor 5, output just the number.
 
-Before tackling "Fizz-Buzz", let's try an example of modulo (%), which returns the remainder of the first number divided by the second number:
+Before tackling "FizzBuzz", let's try an example of modulo (%), which returns the remainder of the first number divided by the second number:
 */
 let remainder = 17 % 5;
 console.log("remainder", remainder); // 2
 
-// And now for "Fizz-Buzz"...
+// And now for "FizzBuzz"...
 
 // 1. Set up a for loop that goes from 1-100:
 
@@ -28,7 +28,7 @@ for (var i = 1; i <= 100; i++) {}
 
 for (let i = 1; i <= 100; i++) {
   if (i % 3 == 0 && i % 5 == 0) {
-    console.log(i + " Fizz BUzz");
+    console.log(i + " FizzBuzz");
     // 3. If the number is not divisible by both 3 and 5, check if it's divisible by 3 only. If it is, log the number followed by 'Fizz':
   } else if (i % 3 == 0) {
     console.log(i + " Fizz");
