@@ -21,7 +21,7 @@ for (let i = 0; i < operBtnsArr.length; i++) {
   operBtnsArr[i].addEventListener("click", onOperatorClick);
 }
 
-// 9. Get the other three "buttons" which call functions; these are the = (equals) and clear buttons:
+// 9. Get the other two "buttons" which call functions; these are the = (equals) and clear buttons:
 const equalsBtn = document.querySelector(".equals-btn");
 equalsBtn.addEventListener("click", calculateAnswer);
 
