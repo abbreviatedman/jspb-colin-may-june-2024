@@ -54,16 +54,14 @@ let appetizer = "fresh salad";
 // slice()
 // The slice() method returns a substring of the string it is called on, without changing the original string. It takes two arguments: a starting and an ending index. The end index is exclusive, meaning it is not included in the returned string. If the end index is omitted, it slices to the end.
 
-let dynamicDuo = "Batamn and Robin";
+let dynamicDuo = "Batman and Robin";
 
-// indexOf() and lastIndexOF() with slice()
+// indexOf() with slice()
 // But what if we didn't know the length of the word. We would have to get the index of the first space and then use that as the end index:
 
 let superCouple = "Superman and Lois Lane";
 
 // To get 'Lois Lane', we could get the index of the first 'L' and then just slice to the end of the string:
-
-// To get the last word of a string, get the index of the last space, and then slice from there to the end:
 
 // split()
 // The split() method is called on a string and returns an array.
@@ -73,17 +71,13 @@ let movieQuote = "Show me the money";
 // Notice that there is only one item in the resulting array. To have each word become an array item, pass the split() method the space between the words as its **delimiter**:
 
 // toLowerCase()
-// The toLowerCase() method is called on a string and returns an all-lowercase version of the string, without changing the original:
+// The toLowerCase() method is called on a string and returns an all-lowercase version of the string, without changing the original. Change the below to lowercase:
 
 let newsFlash = "Yankees Win World Series";
 
+// Let's combine some tools to change "Mets Win World Series" to the image filename that might go with a story like that: "mets-win-world-series.jpg"
+
 let news = "Mets Win World Series";
-
-// ['Mets', 'Win', 'World', 'Series']
-
-// Mets-Win-World-Series.jpg;
-
-// mets-win-world-series.jpg;
 
 // toUpperCase()
 // The toUpperCase() method is called on a string and returns an all-uppercase version of the string, without changing the original:

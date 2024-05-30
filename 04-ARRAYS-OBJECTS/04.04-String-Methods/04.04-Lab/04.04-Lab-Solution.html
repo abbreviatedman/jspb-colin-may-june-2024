@@ -60,14 +60,6 @@
       msg3 = msg3.replace("Yale", veggies[2]);
       console.log(msg3); // Bunny goes to Kale University."
 
-      // Given this array of phrases:
-      const phrases = [
-        "A real customer",
-        "A breeze",
-        "Hangin' with the kids",
-        "Snoopy is a dog",
-      ];
-
       // Given this array of fruits and vegetables:
       const words = [
         "Avocado",
@@ -80,7 +72,7 @@
       // 4. Use the includes() method and if-else logic to check if the word starts with a consonant or a vowel
       // If the word is "Avocado", log: Avocado starts with "A", which is a vowel.
       // If the word is "Broccoli", log: Broccoli starts with "B", which is a consonant.
-      r = Math.floor(Math.random() * words.length);
+      let r = Math.floor(Math.random() * words.length);
       let word = words[r];
       let firstChar = word[0];
       console.log("firstChar", firstChar);
@@ -95,7 +87,7 @@
       // better would be to have a variable "consonant" that the if statements sets to "vowel"
       // and then concat that "consonant" or "vowel" vvariable into the output:
       // Try it again:
-      r = Math.floor(Math.random() * words.length);
+      let r = Math.floor(Math.random() * words.length);
       let consonantOrVowel = "consonant";
       word = words[r];
       firstChar = word[0];
@@ -119,7 +111,7 @@
       // and remove everything from the dot to the end of the string
       let indexOfDot = headline.indexOf(".");
       // use slice() method to get everything from the beginning of the string to
-      // to dot (but not includding the dot)
+      // to dot (but not including the dot)
       headline = headline.slice(0, indexOfDot);
       console.log(headline);
 

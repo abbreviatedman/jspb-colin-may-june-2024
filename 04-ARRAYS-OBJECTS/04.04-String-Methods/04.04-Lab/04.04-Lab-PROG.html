@@ -57,18 +57,21 @@
       let msg3;
       console.log(msg3); // Bunny goes to Kale University."
 
-      // Given this array of phrases:
-      const phrases = [
-        "A real customer",
-        "A breeze",
-        "Hangin' with the kids",
-        "Snoopy is a dog",
+      // Given this array of fruits and vegetables:
+      const words = [
+        "Avocado",
+        "Broccoli",
+        "Cauliflower",
+        "Dragonfruit",
+        "Eggplant",
       ];
 
       // 4. Use the includes() method and if-else logic to check if the word starts with a consonant or a vowel
       // If the word is "Avocado", log: Avocado starts with "A", which is a vowel.
       // If the word is "Broccoli", log: Broccoli starts with "B", which is a consonant.
-      let word;
+     // We'll run it each time on a random word from the array. Reload the page to make sure it works with vowel words and consonant words.
+      let r = Math.floor(Math.random() * words.length);
+      let word = words[r];
       let firstChar;
       console.log("firstChar", firstChar);
       let vowels;
@@ -84,6 +87,7 @@
       if (vowels) {
       }
 
+     // 5.
       // Given this file name:
       let fileName = "Mets-Lead-Off-Game-By-Hitting-Three-Straight-Homers.html";
       // 5. Turn the file name into a news headline, with all words capitalized:
@@ -96,7 +100,7 @@
       // and remove everything from the dot to the end of the string
       let indexOfDot;
       // use slice() method to get everything from the beginning of the string to
-      // to dot (but not includding the dot)
+      // to dot (but not including the dot)
       console.log(headline);
 
       // END: Lab 04.04

@@ -106,12 +106,6 @@ let Lindex = superCouple.indexOf("L");
 let supermansGF = superCouple.slice(Lindex);
 console.log(supermansGF);
 
-// To get the last word of a string, get the index of the last space, and then slice from there to the end:
-
-let lastSpaceIndex = superCouple.lastIndexOf(" ");
-let lastWord = superCouple.slice(lastSpaceIndex);
-console.log(lastWord);
-
 // split()
 // The split() method is called on a string and returns an array.
 
@@ -130,6 +124,8 @@ console.log(movieQuoteArr2); // ['Show', 'me', 'the', 'money']
 let newsFlash = "Yankees Win World Series";
 console.log(newsFlash.toLowerCase());
 console.log(newsFlash); // unchanged
+
+// Let's combine some tools to change "Mets Win World Series" to the image filename that might go with a story like that: "mets-win-world-series.jpg"
 
 let headline = "Mets Win World Series";
 let newsArr = headline.split(" ");
