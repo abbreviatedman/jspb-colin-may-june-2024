@@ -104,8 +104,8 @@ videoPlayerDiv.innerHTML =
 
 for (let i = 0; i < animalsArr.length; i++) {
   let animal = animalsArr[i];
-  let name = animal.name.replace(" ", "-");
-  let tag = `<img src="images/${name}.jpg" onclick="swapAnimal(${i})">`;
+  let filename = animal.name.toLowerCase().replace(" ", "-");
+  let tag = `<img src="images/${filename}.jpg" onclick="swapAnimal(${i})">`;
   animalPicsDiv.innerHTML += tag;
 }
 

@@ -31,26 +31,18 @@ Each array item is an object of six properties:
 // 5. First, get all the elements that we need for the output:
 
 // get animals pic div to hold images
-const animalPics = document.getElementById("animal-pics");
 
 // get video player div
-const videoPlayer = document.getElementById("video-player");
-
-// 6. Output the name and description of the first animal immediately
-// on page load.
-/* 
-- the first array item is `animalsArr[0]`
-- each array item is an object, so the name of the first animal 
-// is `animalsArr[0].name`
-*/
 
 // get h2 for animal name
-const h2 = document.querySelector("h2");
-h2.textContent = animalsArr[0].name;
 
 // get p tag for description
-const p = document.querySelector("p");
-p.textContent = animalsArr[0].desc;
+
+// 6. Output the name and description of the first animal immediately on page load.
+/* 
+- the first array item is `animalsArr[0]`
+- each array item is an object, so the name of the first animal is `animalsArr[0].name`
+*/
 
 // 7. Display the video for the first animal.
 /*
@@ -60,7 +52,6 @@ p.textContent = animalsArr[0].desc;
 */
 
 // display video for first animal
-// videoPlayer.innerHTML = '<iframe width="560" height="315" src="https://www.youtube.com/embed/9jq8AD8M5po" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
 
 // 8. Make sure the html page is using START.js and reload the page in the browser. We should have the video and description at right, and an empty box at left.
 
@@ -68,12 +59,9 @@ p.textContent = animalsArr[0].desc;
 
 // 9. Set up a loop that iterates `animalsArr`. First thing to do in the loop is to save the current object to a variable:
 
-for (let i = 0; i < animalsArr.length; i++) {
-  let animal = animalsArr[i];
-  let name = animal.name.replace(" ", "-");
-  let tag = `<img src="images/${name}.jpg" alt="${animal.name}" onclick="swapAnimal(${i})">`;
-  animalPics.innerHTML += tag;
-}
+// for (let i = 0; i < animalsArr.length; i++) {
+//     let animal = animalsArr[i];
+// }
 
 // 10. Open the `images` folder. Notice that the two-word file names are hyphenated, whereas the animal names in the data have spaces--not hyphens:
 /*
@@ -86,16 +74,6 @@ for (let i = 0; i < animalsArr.length; i++) {
 // 11. Using backticks, concatenate an entire `img` tag, using `${name}` to add the file name, dynamically:
 
 // 12. We need each tag to be clickable to call the `swapAnimal()` function, so add that to the tag as an `onclick` event handler:
-
-function swapAnimal(i) {
-  h2.textContent = animalsArr[i].name;
-  p.textContent = animalsArr[i].desc;
-
-  videoPlayer.innerHTML =
-    '<iframe width="560" height="315" src="https://www.youtube.com/embed/' +
-    animalsArr[i].youTube +
-    '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-}
 
 // 13. The function needs to know which animal was clicked, so pass in the index, `i`, as the argument.
 
