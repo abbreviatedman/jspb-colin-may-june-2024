@@ -4,7 +4,6 @@
 
 // 1. Write a for loop with a counter, `i`, that starts at 0, goes up by one each time, and stops when `i` gets to 10:
 
-
 // 2. Try to access `i` outside the loop. We get an error: "i is not defined":
 
 // 3. Do another loop with `var` instead of `let` for a counter, and then verify that `i` still exists after the loop is done:
@@ -12,7 +11,6 @@
 // 4. Change the condition to `i <= 10` to get the 10 inside the loop and 11 outside the loop.
 
 // 5. Write a loop with a counter that decrements (counts backwards):
-
 
 // 6. Change `var` to `let` and see that `i` ceases to exist once the loop ends:
 
@@ -59,7 +57,6 @@ console.log(fruits);
 // ['apple', 'apricot', 'banana', 'blueberry', 'cherry', 'grape', 'grapefruit', 'kiwi', 'lemon', 'lime', 'mango', 'orange', 'papaya', 'peach', 'pear', 'pineapple', 'plum', 'tangerine', 'watermelon']
 
 // 18. Run the loop again:
-
 
 // The last three fruits ('plum', 'tangerine', 'watermelon') are not showing up. The problem is, the loop stops when `i=13`, but we now have 16 items.
 
