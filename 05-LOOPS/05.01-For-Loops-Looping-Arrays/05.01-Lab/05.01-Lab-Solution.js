@@ -42,8 +42,6 @@ console.log(numsArr);
 3. Given an array of numbers, use a for loop to add up all the numbers. Save the total to a variable, sum.
 */
 
-let nums = [154, 236, 314, 467, 532, 689, 703];
-let sum = 0;
 /*
 Solution expained: 
 - Loop through the array. 
@@ -56,6 +54,7 @@ let sum = 0;
 for (let i = 0; i < nums.length; i++) {
   sum += nums[i];
 }
+
 console.log("nums sum:", sum); // 3095
 
 /*
