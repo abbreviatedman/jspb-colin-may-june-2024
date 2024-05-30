@@ -102,11 +102,3 @@ const veggies = [
 
 function makeWordObj(fruits) {}
 
-// BONUS:
-// 7. Make a function that takes in a big string, such as a page or chapter of text as its argument, and returns an object with each unique word as a key the value of which is the number of times the word occus in the passage. So if the passage is:
-
-// "It is often said that that is the way that the proverbial cookie crumbles."
-
-// the returned object should be:
-
-// { "It": 1, "is": 2, "often": 1, "said": 1, "that": 3, "the": 2, "way": 1, "proverbial": 1, "cookie": 1, "crumbles": 1 }

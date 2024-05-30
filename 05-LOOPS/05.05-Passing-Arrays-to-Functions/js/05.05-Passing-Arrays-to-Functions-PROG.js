@@ -2,6 +2,7 @@
 // Passing Arrays to Functions
 
 // 1. Declare two arrays of strings:
+
 const fruits = [
   "apple",
   "apricot",
@@ -53,41 +54,27 @@ const cars = [
 ];
 
 // 2. Declare the function and assign it a parameter, **arr**:
-function addArticle(arr) {
-  const newArr = []; // to hold the final items w their articles
-  const VOWELS = "aeioAEIO";
-  let article = "";
 
-  for (let i = 0; i < arr.length; i++) {
-    let word = arr[i]; // 'apple'
-    let firstChar = word[0]; // 'a'
-    // if VOWELS includes firstChar, prepend 'an ', else prepend 'a '
-    VOWELS.includes(firstChar) ? (article = "an ") : (article = "a ");
-    newArr.push(article + word);
-  }
-
-  return newArr;
-}
 // 3. The function needs a few variables:
 /*
     - an empty array to hold the results
     - a variable set equal to the article followed by a space
     - a variable for checking if a word starts with a, e, i, o
     */
-// let newArr;
+let newArr;
 
 // 4. The function needs to check each item in the array, so set up a loop that iterates the array:
 
 // 5. Each time through the loop, save the current item, as well as the first letter of that item:
-// let word; // a
+let word; // a
 
 // 6. Add an if-statement that uses the string.includes() method to check if the first character, set to lowercase, is "a", "e", "i" or "u". If it is, set the value of article to "an":
 /*
-    //   if(vowels.includes(firstChar)) {
-    //     article = 'an ';
-    //   } else {
-    //     article = 'a ';
-    //   }
+      if(vowels.includes(firstChar)) {
+        article = 'an ';
+      } else {
+        article = 'a ';
+      }
       */
 // 7. Just for practice, comment out the if-else and switch to a ternary expression:
 
@@ -95,11 +82,11 @@ function addArticle(arr) {
 
 // 9. Call the function twice, passing in a different array of strings each time. Save the return values to variables and log them:
 
-let fruitsArticleArr = addArticle(fruits);
-console.log(fruitsArticleArr);
+let fruitsArr;
+console.log(fruitsArr);
 
-let carsArticleArr = addArticle(cars);
-console.log(carsArticleArr);
+let carsArr;
+console.log(carsArr);
 
 // function #2: find target number in array
 
@@ -111,41 +98,11 @@ console.log(carsArticleArr);
 
 // 10. Declare an array of numbers, followed by a function:
 
-const numsArr = [5, 7, 9, 12, 14, 16, 20, 25, 30, 40, 50, 88, 99, 123, 234];
+const numsArr = [5, 7, 9, 12, 14, 16, 20, 25, 30, 40, 50];
 
 // 11. Write the function with two parameters.
-function findNum(arr, num) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] == num) {
-      return i; // num found at index i
-    }
-  }
-  return -1; // num not found
-}
+
 // 12. Iterate the array with a for loop:
-let find12 = findNum(numsArr, 12);
-console.log("find12:", find12); // 3
-
-let find15 = findNum(numsArr, 15);
-console.log("find15:", find15); // -1
-
-// 11B. This also workd, but Why is this solution bad?
-function findNumber(arr, num) {
-  let indx; // undefined = falsey
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] == num) {
-      indx = i; // num found at index i
-    }
-  }
-  if (!indx) indx = -1; // num not found
-  return indx;
-}
-
-let find7 = findNumber(numsArr, 7);
-console.log("find7:", find7); // 1
-
-let find6 = findNumber(numsArr, 76);
-console.log("find6:", find6); // -1
 
 // 13. Check if the current array item equals the target number, and if it does, return the index:
 
@@ -176,19 +133,9 @@ Let's try one more function that takes an array for its argument. The function c
 
 // 17. Declare three arrays of numbers:
 let nums1 = [2, 4, 6, 8, 10];
-let nums2 = [2, 4, 7, 8, 10];
-let nums3 = [2, 4, 6.78, 10];
 
 // 18. Write a function that expects an array to be passed to it:
-function checkIfAllEven(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] % 2 != 0) {
-      // if current num, arr[i], is NOT even
-      return false;
-    }
-  }
-  return true;
-}
+
 // 19. Have the function iterate over the array:
 
 // 20. Each time through the loop, run an if statement that uses the modulo operator (%) to divide the current number by 2. If the reminder is not equal to (!=) 0, the number is *not* even, so return false:
@@ -197,14 +144,8 @@ function checkIfAllEven(arr) {
 
 // 22. Call the function three times, once for each array; save the return value to a variable and log it:
 
-let allEven1 = checkIfAllEven(nums1);
-console.log("allEven1", allEven1); // true (all even)
-
-let allEven2 = checkIfAllEven(nums2);
-console.log("allEven2", allEven2); // false (1 odd)
-
-let allEven3 = checkIfAllEven(nums3);
-console.log("allEven3", allEven3); // false (1 float)
+let allEven1;
+console.log("allEven1", allEven1); // true
 
 // END Lesson 05.05
 // NEXT: Lab 05.05

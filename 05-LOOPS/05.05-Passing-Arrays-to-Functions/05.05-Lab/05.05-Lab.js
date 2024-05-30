@@ -14,7 +14,7 @@ const nums = [4, 6, 10, 12, 18, 21, 24, 28, 33, 36];
 // - totChars (number of characters in the array)
 // - totVowels (number of vowels in the array)
 // - initVowels (number of words that start with a vowel)
-// - berrries (number of berries)
+// - berries (number of berries)
 // HINT: The returned object does not need a name. The function call should be set equal to a variable, and in this way, the object will be assigned its name.
 
 const fruits = [
