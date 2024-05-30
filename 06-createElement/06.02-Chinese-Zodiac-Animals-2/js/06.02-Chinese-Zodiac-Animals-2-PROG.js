@@ -1,4 +1,4 @@
-// Lesson 06.02 - PROG
+// Lesson 06.02 - START
 // Chinese Zodiac Animals, Part 2
 
 // 9. Open **06.01-Creating-Elements-START.js** and get the **section** that serves as the parent wrapper of the interface:
@@ -24,7 +24,7 @@ const section = document.querySelector("section");
 for (let i = 0; i < 12; i++) {
   const divvy = document.createElement("div");
   divvy.className = "divvy";
-  // divvy.textContent = 'div ' + i;
+  divvy.textContent = "div " + i;
   section.appendChild(divvy);
 
   // 15. Reload the page. All 12 divs should appear, in two rows of six. The divvy class has *display: inline-block* to arrange the divs side-by-side.
@@ -40,13 +40,13 @@ for (let i = 0; i < 12; i++) {
 
   // 21. Change the source to be dynamic, so that we get all 12 animals--not just the cow. Concatenate the **eng** property into the file path. The current animal is available as **animals[i]** and its English name is **animals[i].eng**:
   // 22. Reload the page. We should have 12 divs, each with a different animal.
-  pic.src = `images/animals/${animal.eng}.jpg`;
+  pic.src = `images/animals/${animals[i].eng}.jpg`;
 
   // 18. Apply the **.animal-pic** class to the image:
   pic.className = "animal-pic";
 
   // 19. Delete the text and output the image inside the div. In terms of nesting, **divvy** goes inside **section** and **pic** goes inside **divvy**:
-  // divvy.textContent = '';
+  divvy.textContent = "";
   divvy.appendChild(pic);
 
   // 24. Still in the loop, make the **input** box:
@@ -74,50 +74,7 @@ for (let i = 0; i < 12; i++) {
 
   // 31. Output the input box to the div. It will appear under the animal image:
   divvy.appendChild(inputBox);
-
-  // Lesson Part II (B.)
-  // 5B. - 9B. make an image and set its source to sound-icon.png:
-  // apply class and have icon call playSound func when clicked
-  let soundIcon = new Image();
-  soundIcon.src = "images/sound-icon.png";
-  soundIcon.className = "sound-icon";
-  soundIcon.eng = animal.eng;
-  soundIcon.addEventListener("click", playSound);
-  divvy.appendChild(soundIcon);
-
-  // 14B. Still inside the loop, make an image
-  // and set its source to the character jpg for the animal.
-  let chineseChar = new Image();
-  chineseChar.src = `images/chars/char-${animal.chi}.jpg`;
-  chineseChar.className = "chinese-char";
-  divvy.appendChild(chineseChar);
-
-  // 18B. Still in the big loop, make a p tag to hold the years
-  // and assign it its class. The css sets the width
-  // narrow, so that only one year can fit per line.
-  const p = document.createElement("p");
-  p.className = "zodiac-year";
-  let yearSeries = animal.year - 156 + " "; // start 156 yrs in past
-  for (let y = 144; y > -24; y -= 12) {
-    // go up to 24 years in the future
-    yearSeries += animal.year - y + " "; // concat year series
-  }
-  p.textContent = yearSeries; // put year series text in the p tag
-  divvy.appendChild(p); // output the p tag to divvy
 } // end loop
-
-// 10B. in the global scope, instantiate an instance
-// of the Audio object. It's the same synta as the Image object,
-// with the new keyword:
-const sound = new Audio();
-
-// 11B. write the playSound function
-function playSound() {
-  // alert(this.eng);
-  sound.pause(); // pause() stops any sound which may be playing
-  sound.src = `audio/${this.eng}.mp3`;
-  sound.play(); // play() plays the source file
-}
 
 // 20. Reload the page. We should have 12 divs, each with the cow.
 
@@ -130,14 +87,16 @@ function playSound() {
 // 32. Define the **checkSpelling** function and start by getting the **value** of the input element--whatever the user typed into the box:
 function checkSpelling() {
   let input = this.value;
+
   // 33. Compare the user input to the English, pinyin and alternate (also) spelling. The user input needs to match *one* of the three correct spellings:
   if (input == this.eng || input == this.chi || input == this.also) {
     // 34. If the user input is correct, turn the input box green; else turn the box red:
     this.style.backgroundColor = "#0B0";
+    this.style.color = "#fff";
   } else {
     this.style.backgroundColor = "#921";
+    this.style.color = "#fff";
   }
-  this.style.color = "#fff";
 }
 
 // 35. Reload the page. Each box should have an animal pic and an input box.
